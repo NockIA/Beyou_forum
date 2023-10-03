@@ -10,7 +10,7 @@ Log in with :
     - Create an account at: http://localhost:8080/register
 
 # BEYOU FORUM
-This readme corresponds to our latest B1 IT project: FORUM
+This readme corresponds to our latest B1 IT project: **FORUM** in collaboration with Jellyph1sh / NockIA / evanferron / Ylucasb
 
 ## OVERALL PROJECT OBJECTIVES
 The aim of this project is to create a forum in GOLANG. To do this, we need to set up a web server and create and operate an SQLite database. This project will also enable us to develop our web skills.
