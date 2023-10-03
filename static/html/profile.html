@@ -1,0 +1,65 @@
+{{ define "profile" }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="../css/easyCss.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <title>Profile</title>
+</head>
+<body>
+    {{ template "navBar" .}}
+    <div class="containerProfilePage columnContainer">
+        <div class="rowContainer containerProfileHeader ">
+            <div class="rowContainer alignCenter">
+                <img class="imageProfile" src="{{.UserInfo.ProfilePicture}}" alt="pp">
+                <p class="username">{{.UserInfo.Username}}</p>
+            </div>
+            <div class="rowContainer dateContainer alignCenter">
+                <span class="googleIcon material-symbols-outlined">calendar_month</span>
+                <p class="creationAccountDate">Joined {{.UserCreationDate}}</p>
+            </div>
+        </div>
+        <div class="containerContentProfile">
+            <div class="containerPosts columnContainer">
+                <h2 class="catProfile">Posts</h2>
+                {{range $Post := .Posts}}
+                    <div class="columnContainer containerPostProfile">
+                        <div class="rowContainer containerHeaderProfile">
+                            <img class="imgPostProfile" src="{{ $Post.ProfilePicture}}" alt="pp">
+                            <p class="usernamePost">{{$Post.AuthorName}}</p>
+                            <span class="separatationDate"></span>
+                            <p class="structuredDate">{{$Post.StructuredDate}} ago</p>
+                        </div>
+                        <p class="contentPost">{{$Post.Content}}</p>
+                        <div class="rowContainer containerLikes alignCenter">
+                            <span class="material-symbols-outlined">thumb_up</span>
+                            <p>{{$Post.Likes}}</p>
+                            <span class="separatationLikes"></span>
+                            <p>{{$Post.Dislikes}}</p>
+                            <span class="material-symbols-outlined">thumb_down</span>
+                        </div>
+                    </div>
+                {{end}}
+            </div>
+            <div class="containerTopics columnContainer">
+                <h2 class="catProfile">My topics</h2>
+                <div class="topicsContainer columnContainer">
+                    {{range $Topic := .Topics}}
+                        <div class="topic rowContainer">
+                            <img class="imgPostProfile" src=" {{$Topic.Picture}}" alt="pp">
+                            <p class="topicTitle">/{{$Topic.Title}}</p>
+                        </div>
+                    {{end}}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{{ end }}

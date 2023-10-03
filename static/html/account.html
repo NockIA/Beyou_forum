@@ -1,0 +1,209 @@
+{{ define "account"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/account.css">
+    <link rel="stylesheet" href="../css/easyCss.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Account</title>
+</head>
+<body>
+    <script>
+        function showPopup(id) {
+          document.getElementById(id).style.visibility = 'visible';
+        }
+        
+        function changeButtonColor(originBtnId, targetId) {
+            const [originBtn, target] = [document.getElementById(originBtnId), document.getElementById(targetId)];
+            const [colorOrigin, colorTarget] = (originBtnId === "btnDelete") ? ["#D97136", "transparent"] : ["transparent", "#D97136"];
+            [originBtn, target].forEach(btn => {
+                btn.classList.add("transition-button");
+                btn.style.backgroundColor = (btn === originBtn) ? colorOrigin : colorTarget;
+            });
+        }
+
+        function restoreButtonColor(originBtnId, targetId) {
+            const [originBtn, target] = [document.getElementById(originBtnId), document.getElementById(targetId)];
+            const [colorTarget, colorOrigin] = (originBtnId === "btnDelete") ? ["#D97136", "transparent"] : ["transparent", "#D97136"];
+            [originBtn, target].forEach(btn => {
+                btn.classList.add("transition-button");
+                btn.style.backgroundColor = (btn === originBtn) ? colorOrigin : colorTarget;
+            });
+        }
+
+        function errorPopup(errorMsg){
+            let content = document.getElementById('msgError').innerText = errorMsg
+            document.getElementById('popupError').style.visibility = 'visible';
+        }
+    </script>  
+    <div class="containerAccountPage">
+        {{ template "navBar" .}}
+        <div class="columnContainer containerAccountComp">
+            <h1 class="mainCatAccount marginContentAccount">Account settings</h1>
+            <span class="underlineAccountPage"></span>
+            <div id="popupError">
+                <div class="containerPopupError columnContainer">
+                    <a href="/account"><span class="closeSpan material-symbols-outlined">close</span></a>
+                    <div class="containerTopError rowContainer">
+                        <h2>It seems that something went <span class="coloredText">wrong</span></h2>
+                        <img src="../img/wrong.png" alt="invalid_img">
+                    </div>
+                    <h2 id="msgError" class="errorMsgEdit">Invalid email</h2>
+                </div>
+            </div>
+            <div id="popupUpload">
+                <div class="deletePopup">
+                    <div class="popup-content columnContainer">
+                        <h2 class="titleDelPop alignUploadTexts">Edit your profile picture ?</h2>
+                        <p class="textPopDel alignUploadTexts">Select your profile picture, then upload it.</p>
+                    </div>
+                    <div class="rowContainer uploadPopBtnCont">
+                        <form action="/account" method="post" enctype="multipart/form-data">
+                            <input id="file-upload" type="file" class="inputFocus"  name="photo">
+                            <label for="file-upload" class="uploadBtn delPopBtn delPopBtnCancel">Select a file</label>
+                            <input class="delPopBtn delPopBtnDelete" type="submit" value="Upload">
+                        </form>
+                        <a href="/account" class="cancelUpload delPopBtn delPopBtnCancel">Cancel</a>
+                    </div>
+                </div>
+            </div>
+            <div class="columnContainer accountCompContGlobal marginContentAccount">
+                <span class="backgroundAccountCont"></span>
+                <div class="accountCompCont">
+                    <div class="rowContainer containerImg alignCenter">
+                        <img onclick="showPopup('popupUpload')" class="imgAccount" src="{{.Profile_picture}}" alt="pp">
+                    </div>
+                    {{ if .IsNotValidchangedPwd}}
+                        <script>errorPopup('Invalid password')</script>
+                    {{ else if .IsNotValidchangedBIO}}
+                        <script>errorPopup('Invalid bio')</script>            
+                    {{ else if .IsNotValidEditMail}}
+                        <script>errorPopup('Invalid Email')</script>
+                    {{ else if .IsNotValidchangedUsername}}
+                        <script>errorPopup('Invalid username')</script>
+                    {{ end }}
+                    <div class="containerUser rowContainer alignCenter">
+                        <form action="" method="post">
+                            <input class="usernameAccount" placeholder="{{ .Username }}" type="text" name="changedUsername" id="">
+                        </form>
+                    </div>
+                    <div class="columnContainer containerEmail">
+                        <h3 class="accountCompEmail">Email address</h3>
+                        <div class="rowContainer containerEditEmail">
+                            <form action="" method="post"  class="rowContainer alignCenter">
+                                <input name="editMail" type="email" placeholder="{{ .Email }}" class="accountCompEmailUser">
+                                <button type="submit"><span class="googleEditIcon material-symbols-outlined"> edit </span></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="rowContainer alignCenter containerEditNames">
+                        <div class="columnContainer containerEditFormNames ">
+                            <h3>First name</h3>
+                            <form action="" method="post">
+                                <input name="changedFirstname" type="text" placeholder="{{ .FirstName }}" class="nameUser">
+                            </form>
+                            <h3>Last name</h3>
+                            <form action="" method="post">
+                                <input name="changedLastname" type="text" placeholder="{{ .LastName }}" class="nameUser">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="containerBio columnContainer">
+                    <h2 class="bioTitle">Clic on bio to edit</h2>
+                    <form action="" method="post"  class="formBio">
+                        <input name="changedBIO"  cols="40" rows="5" type="text" placeholder="{{ .Description }}" class="accountCompEmailUser">
+                    </form>
+                </div>
+            </div>
+            <h1 class="mainCatAccount marginContentAccount">Password settings</h1>
+            <span class="underlineAccountPage"></span>
+            <h2 class="accountInformationMsg marginContentAccount">EDIT YOUR PASSWORD</h2>
+            <button id="btnPassword" onmouseover="changeButtonColor('btnDelete','btnPassword')" onmouseout="restoreButtonColor('btnDelete','btnPassword')"onclick="showPopup('popupPwd')" type="submit" class="btnChangePassword marginContentAccount">Change password</button>
+            <div id="popupPwd" class="columnContainer ">
+                <div class="containerClose">
+                    <a href="/account" class="rowContainer flexExit">
+                        <span class="googleSpanClosePwd material-symbols-outlined">close</span>
+                    </a>
+                </div>
+               
+                <h1 class="titlePwdPop">Edit<br>password<br>menu</h1>
+                <div class="editPwdPopup">
+                    <div class="hidContainer">      
+                        <div class="backgroundPwd">
+                            <i class="circle1"></i >
+                            <i class="circle2"></i >
+                            <i class="circle3"></i >
+                        </div>
+                    </div>
+                    <div class="columnContainer containerContentEdit">
+                        <form action="" method="post" name="changePassword">
+                            <div class="columnContainer">
+                                <h2 class="nameEditPop">Current password</h2>
+                                <input class="inputPwd" required type="password" name="currentPwd">
+                            </div>
+                            <div class="columnContainer">
+                                <h2 class="nameEditPop">New password</h2>
+                                <input class="inputPwd" required type="password" name="changedPwd1">
+                            </div>
+                            <div class="columnContainer">
+                                <h2 class="nameEditPop">Confirm new password</h2>
+                                <input class="inputPwd" required type="password" name="changedPwd2">
+                            </div>
+                        </div>
+                        <div class="rowContainer alignCenter">
+                            <input type="submit" class="confirmBtn" name="changePassword" value="Confirm">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <span class="underlineAccountPage"></span>
+            <h2 class="accountInformationMsg marginContentAccount marginh2Del">DISCONNECT</h2>
+            <div class="rowContainer containerDisconnect">
+                <button onclick="showPopup('popupDisconnect')" class="marginContentAccount btnDisconnect" >Disconnect from {{ .Username }}</button>
+                <span class="material-symbols-outlined">logout</span>
+            </div>
+            <div id="popupDisconnect" class="columnContainer ">
+                <div class="deletePopup">
+                    <div class="popup-content columnContainer">
+                        <h2 class="titleDelPop">Are you sure ?</h2>
+                        <p class="textPopDel">Are you sure you want to disconnect from your account</p>
+                    </div>
+                    <div class="rowContainer delPopBtnCont">
+                        <a href="/account" class="delPopBtn delPopBtnCancel">Cancel</a>
+                        <form action="" method="post" name="Disconnect">
+                            <div class="rowContainer">
+                               <input class="delPopBtn delPopBtnDelete" type="submit" name="disconnect" value="disconnect">   
+                            </div> 
+                        </form> 
+                    </div>
+                </div>
+            </div>
+            <span class="underlineAccountPage"></span>
+            <h2 class="accountInformationMsg marginContentAccount marginh2Del">DELETE ACCOUNT</h2>
+            <button id="btnDelete" onmouseover="changeButtonColor('btnPassword','btnDelete')" onmouseout="restoreButtonColor('btnPassword','btnDelete')" onclick="showPopup('popupDel')" class="marginContentAccount btnDeleteAccount" >Delete account</button>
+            <div id="popupDel" class="columnContainer ">
+                <div class="deletePopup">
+                    <div class="popup-content columnContainer">
+                        <h2 class="titleDelPop">Are you sure ?</h2>
+                        <p class="textPopDel">Are you sure you want to delete your account, this <br>
+                            action will delete permanently your account.</p>
+                    </div>
+                    <div class="rowContainer delPopBtnCont">
+                        <a href="/account" class="delPopBtn delPopBtnCancel">Cancel</a>
+                        <form action="" method="post" name="delAccount">
+                            <input class="delPopBtn delPopBtnDelete" type="submit" name="delAccount" value="Delete">
+                        </form> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{{end}}

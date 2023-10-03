@@ -1,0 +1,74 @@
+{{ define "register"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/login.css" >
+    <link rel="stylesheet" href="../css/easyCss.css">
+    <link rel="stylesheet" href="../css/navBar.css">
+    <title>Register</title>
+</head>
+<body>
+    <script>
+        function errorPopup(errorMsg){
+           let content = document.getElementById('msgError').innerText = errorMsg
+           document.getElementById('popupError').style.visibility = 'visible';
+       }
+   </script>
+    <div class="containerLoginPage">
+        {{ template "navBar" .}}
+        <div id="popupError">
+            <div class="containerPopupError columnContainer">
+                <a href="/register"><span class="closeSpan material-symbols-outlined">close</span></a>
+                <div class="containerTopError rowContainer">
+                    <h2>It seems that something went <span class="coloredText">wrong</span></h2>
+                    <img src="../img/wrong.png" alt="invalid_img">
+                </div>
+                <h2 id="msgError" class="errorMsgEdit">Invalid email</h2>
+            </div>
+        </div>
+        <div class="columnContainer containerRegister">
+            <h1 class="titleRegister">Register</h1>
+            {{if .EmailAndUsernameIsNotValid}}
+                <script>errorPopup('Invalid Email and Pseudo')</script>  
+            {{ else if .EmailIsNotValid}}
+                <script>errorPopup('Invalid Email')</script>  
+            {{ else if .UsernameIsNotValid}}
+                <script>errorPopup('Invalid Username')</script>  
+            {{end}}
+            <h2 class="subTitleLogin">Please enter an email, username and password</h2>
+            <form method="post" class="columnContainer formStyleRegister">
+                <div class="containerName">
+                    <div class="columnContainer">
+                        <h2 class="textCatLogin">First name:</h2>
+                        <input class="inputLog" type="text" placeholder="Enter your first name" name="firstName" id="">
+                    </div>
+                    <div class="columnContainer">
+                        <h2 class="textCatLogin">Last name:</h2>
+                        <input class="inputLog" type="text" placeholder="Enter your last name" name="lastName" id="">
+                    </div>
+                </div>
+                <h2 class="textCatLogin">Email:</h2>
+                <input class="inputLog" type="email" placeholder="Enter an email" name="email" id="">
+                <h2 class="textCatLogin">Username:</h2>
+                <input class="inputLog" type="text" placeholder="Enter a username"  name="username" id="">
+                <h2 class="textCatLogin">Password:</h2>
+                <input class="inputLog" type="password" placeholder="Enter a password"  name="password" id="">
+                <div class="rowContainer rememberContainer">
+                    <div class="rowContainer alignCenter">
+                        <input value="true" type="checkbox" id="" name="rememberMe">
+                        <label class="remember">Remember Me</label>
+                    </div>
+                    <div class="submitContainer alignCenter">
+                        <input class="submitbutton" type="submit" value="Submit"></input>
+                        <i class="submitBackground"></i>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+{{end}}

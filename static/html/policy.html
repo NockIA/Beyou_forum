@@ -1,0 +1,41 @@
+{{ define "policy" }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/policy.css">
+    <link rel="stylesheet" href="../css/easyCss.css">
+    <title>Policy</title>
+</head>
+<body>
+    {{ template "navBar" .}}
+    <div class="containerPolicyPage">
+        <h1>Our <span class="coloredText">cookies</span>'s policy</h1>
+        <div class="columnContainer containerParagraph">
+            <h2>What is a <span class="coloredText">cookie</span>?</h2>
+            <p>A cookie is a small text file and covers all types of tracers "deposited and read, for example, when consulting a website, reading an e-mail, installing or using software or a mobile application, regardless of the type of terminal used". Cookies may be placed by the server of the Site visited or by a third-party server (advertising agency, web analytics service, etc.). Cookies do not compromise site security.</p>
+        </div>
+        <div class="columnContainer containerParagraph">
+            <h2>Cookies set by <span class="coloredText">Bword</span> Studio</h2>
+            <p>When you connect to our Site, we may install various cookies on your terminal.</p>
+            <p><b>The cookies we issue enable us to :</b></p>
+            <ul class="listCookies">
+                <li><span class="coloredText">Maintaining</span> the smooth running of the Site</li>
+                <li><span class="coloredText">Manage</span> the acceptance and retention period of cookies</li>
+                <li><span class="coloredText">Control</span> whether the user is connected or not</li>
+                <li><span class="coloredText">Determine</span> the type of user (Admin,guest...)</li>
+            </ul>
+        </div>
+        <div class="columnContainer containerParagraph">
+            <h2>Cookie <span class="coloredText">management</span></h2>
+            <p>When you visit our Site for the first time, a cookie banner will be displayed informing you that cookies have been set.</p>
+        </div>
+        <div class="columnContainer containerParagraph">
+            <h2>Contacts</h2>
+            <p>In accordance with the French Data Protection Act of 6 January 1978, as amended, and with the RGPD, you have the right to access, rectify, object to, delete and restrict information obtained from cookies and other tracers. To exercise this right, please contact <span class="coloredText">beyou@studio.fr</span>.</p>
+        </div>
+    </div>
+</body>
+</html>
+{{ end }}

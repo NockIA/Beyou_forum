@@ -1,0 +1,77 @@
+/*---------------------- Containers ----------------------*/
+
+.cookiesContainer {
+    background-color: #28292fdc;
+    border-top-left-radius: 5px;
+    gap: 3vh;
+    width: max-content;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+    visibility: visible;
+    border-top: 2px solid #44454F;
+    border-left: 2px solid #44454F;
+    backdrop-filter: blur(10px);
+}
+
+.containerBtnCookies {
+    align-self: baseline;
+    width: 100%;
+    align-items: center;
+    height: 3rem;
+    justify-content: center;
+}
+
+/*---------------------- Texts ----------------------*/
+
+.textCookies {
+    color: whitesmoke;
+    font-family: 'Poppins';
+    text-align: center;
+    width: 80%;
+    height: 5rem;
+    font-size: 1rem;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*---------------------- Buttons ----------------------*/
+
+.btnPolicy {
+    background-color: #44454F ;
+    color: #C6C6C6;
+    font-family: 'Poppins-regular';
+    width: 80%;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0rem 2rem;
+    height: 100%;
+
+}
+
+.btnOk {
+    background-color: #D36638;
+    color: white;
+    font-family: 'Poppins';
+    text-align: center;
+    height: 100%;
+    padding: .5rem 2rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+/*---------------------- Others ----------------------*/
+
+.cookieImg {
+    width: 8rem;
+    height: 8rem;
+    padding-top: 1rem;
+}
+

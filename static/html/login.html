@@ -1,0 +1,57 @@
+{{ define "login"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/login.css" >
+    <link rel="stylesheet" href="../css/easyCss.css">  
+    <title>Login</title>
+</head>
+<body>
+    <script>
+        function errorPopup(errorMsg){
+            let content = document.getElementById('msgError').innerText = errorMsg
+            document.getElementById('popupError').style.visibility = 'visible';
+        }
+    </script>
+    <div class="containerLoginPage">
+        {{template "navBar" .}}
+        <div id="popupError">
+            <div class="containerPopupError columnContainer">
+                <a href="/login"><span class="closeSpan material-symbols-outlined">close</span></a>
+                <div class="containerTopError rowContainer">
+                    <h2>It seems that something went <span class="coloredText">wrong</span></h2>
+                    <img src="../img/wrong.png" alt="invalid_img">
+                </div>
+                <h2 id="msgError" class="errorMsgEdit">Invalid email</h2>
+            </div>
+        </div>
+        <div class="columnContainer containerLogin">
+            <h1 class="titleLogin">LOGIN</h1>
+            {{if .IsNotValid}}
+                <script>errorPopup('Invalid Parameters')</script>  
+            {{end}}
+            <h2 class="subTitleLogin">Please enter your email and password</h2>
+            <form method="post" class="columnContainer formStyleLog">
+                <h2 class="textCatLogin">Email or Username:</h2>
+                <input class="inputLog" type="text" placeholder="Enter your email or username" name="userInput" id="userInput">
+                <h2 class="textCatLogin">Password:</h2>
+                <input class="inputLog" type="password" placeholder="Enter your password"  name="userPassword" id="userPassword">
+                <div class="rowContainer rememberContainer">
+                    <div class="rowContainer alignCenter">
+                        <input value="true" type="checkbox" id="" name="rememberMe">
+                        <label class="remember">Remember Me</label>
+                    </div>
+                    <div class="submitContainer alignCenter">
+                        <input class="submitbutton" type="submit" value="Submit"></input>
+                        <i class="submitBackground"></i>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+{{end}}

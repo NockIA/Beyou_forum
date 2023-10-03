@@ -1,0 +1,23 @@
+{{ define "cookies"}}
+    <script>
+        function setDisplay () {
+            var doc = document.getElementById('cookies');
+            if (doc != null){
+                doc.style.display = "none";
+            }
+        }
+    </script>
+    {{if not .HasAcceptedCookie}}
+    <div id="cookies" class="cookiesContainer columnContainer">
+        <img class="cookieImg" src="../img/cookie.png" alt="cookie_img">
+        <h2 class="textCookies">We use cookies to make your 
+            experience  better</h2>
+        <div class="containerBtnCookies rowContainer">
+            <a class="btnPolicy rowContainer alignCenter" href="/policy">Check cookies policy</a>
+            <form action="" method="post">
+                <input onsubmit="setDisplay()"class="btnOk rowContainer alignCenter" name="AcceptCookies" type="submit" value="OK">
+            </form>
+        </div>
+    </div>
+    {{ end }}
+{{ end }}

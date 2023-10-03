@@ -1,0 +1,780 @@
+/*--------------------- Responsive ---------------------*/
+
+@media screen and (min-width:1200px) {
+    .containerAccountPage {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        height: max-content;
+    }
+    .containerAccountComp {
+        margin-left: 15vw;
+        width: 65%;
+    }
+    .containerUser {
+        padding: 0 1vw;
+    }
+    .accountCompCont {
+        gap: 0.5vw;
+        flex-direction: row;
+    }
+    .underlineAccountPage {
+        width: 100%;
+    }
+    .containerEmail {
+        padding: 0 1rem;
+   
+    }
+    .backgroundPwd {
+        width: 32rem;
+    }
+    .inputPwd {
+        width: 90.5%;
+    }
+    .googleSpan {
+        right: 36vw;
+    }
+    .containerClose {
+        width: 30rem;
+    }
+}
+
+
+@media screen and (min-width:900px) and (max-width:1200px) {
+    .containerAccountPage {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-right: 5vw;
+    }
+    .containerImg {
+        width: 100%;
+        margin-bottom: 0.8vh;
+    }
+    .accountCompCont {
+        flex-direction: column;
+    }
+    .underlineAccountPage {
+        width: 100%;
+    }
+    .containerEmail {
+        margin-top: 0.8vh;
+        align-items: center;
+        width: 100%;
+    }
+    .containerEditNames {
+        margin-top: 0.8vh;
+        width: 100%;
+    }
+    .backgroundPwd {
+        width: 32rem;
+    }
+    .inputPwd {
+        width: 90.5%;
+    }
+    .googleSpan {
+        right: 30vw;
+    }
+    .containerClose {
+        width: 30rem;
+    }
+    .containerEditFormNames {
+        align-items: center;
+    }
+    .nameUser {
+        text-align: center;
+    }
+    .bioTitle {
+        text-align: center;
+    }
+}
+
+
+@media screen and (max-width:900px) {
+    .containerAccountPage {
+        display: flex;
+        flex-direction: column;
+        margin-top: 7rem;
+    }
+    .accountCompCont {
+        flex-direction: column;
+    }
+    .containerImg {
+        width: 100%;
+        margin-bottom: 0.8vh;
+    }
+    .containerAccountComp {
+        align-items: center;
+    }
+    .underlineAccountPage {
+        width: 95%;
+    }
+    .accountInformationMsg{
+        text-align: center;
+    }
+    .containerEmail {
+        margin-top: 0.8vh;
+        align-items: center;
+        width: 100%;
+    }
+    .containerEditNames {
+        margin-top: 0.8vh;
+        width: 100%;
+    }
+    .backgroundPwd {
+        width: 355px;
+    }
+    .inputPwd {
+        width: 87.5%;
+    }
+    .googleSpan {
+        right: 25vw;
+    }
+    .containerClose {
+        width: 15rem;
+    }
+    .containerEditFormNames {
+        align-items: center;
+    }
+    .nameUser {
+        text-align: center;
+    }
+    .bioTitle {
+        text-align: center;
+    }
+}
+
+/*--------------------- Global ---------------------*/
+
+body {
+    background-color: #32333B;
+    margin: 0;
+}
+
+/*------------------------ Animations ------------------------*/
+
+@keyframes disconnectAnim {
+    0% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+/*--------------------- Containers ---------------------*/
+
+.accountCompContGlobal{
+    width: max-content;
+    height: max-content;
+}
+
+.accountCompCont {
+    font-family: 'Poppins-regular';
+    background-color: #28292F;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    padding-bottom: 0.8vh;
+}
+
+.containerEmail {
+    background-color: rgba(26, 26, 29, 0.35);
+    height: 100%;
+}
+
+.containerEditEmail {
+    align-items: center;
+    gap: 1vw;
+}
+
+.backgroundAccountCont {
+    background-color: #D97136;
+    border-top-right-radius: 15px ;
+    border-top-left-radius: 15px ;
+    width: 100%;
+    height: 3rem;
+}
+
+.containerAccountComp {
+    gap: 2vh;
+}
+
+.marginContentAccount {
+    margin-left: 1vw;
+}
+
+.marginh2Del {
+    margin-top: 1vh;
+    margin-bottom: -0.5rem;
+}
+
+.containerBio {
+    background-color:  rgba(26, 26, 29, 0.6);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 2rem;
+    gap: 1vh;
+}
+
+.containerUser{
+    height: 100%;
+    background-color: rgba(26, 26, 29, 0.35);
+    width: 100%;
+
+}
+
+.containerEditNames{
+    background-color: rgba(26, 26, 29, 0.35);
+    height: 100%;
+}
+
+.containerEditFormNames {
+    padding: 0 2vw;
+
+}
+
+.containerImg {
+    background-color: rgba(26, 26, 29, 0.35);
+    height: 100%;
+}
+.containerDisconnect {
+    color: #D97136;
+    align-items: center;
+    gap: .5vw;
+}
+
+/*--------------------- Texts ---------------------*/
+
+.mainCatAccount {
+    font-family: 'Poppins';
+    font-size: 1.2rem;
+    color: whitesmoke;
+}
+
+.usernameAccount {
+    font-family: 'Poppins-regular';
+    color: rgba(255, 255, 255, 1);
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    max-width: 8rem;
+    text-align: center;
+    border: 2px solid transparent;
+
+}
+
+.containerUser input[type="text"]:focus{
+    outline: none;
+    border: 2px solid #d36638;
+    border-radius: 2px;
+}
+
+.accountCompEmail  {
+    color: whitesmoke;
+    margin-left: 0.3rem;
+}
+
+.accountCompEmailUser {
+   color: #8D8D8D;
+   background-color: transparent;
+   border-radius: 5px;
+   font-weight: 700;
+   margin-left: 0.1rem;
+   align-items: center;
+}
+
+.containerEditEmail input[type="email"]:focus{
+    outline: none !important;
+    border:2px solid #D36638;
+    padding-left: 0.2rem;
+    /* padding-right: -0.2rem; */
+}
+
+.containerEditEmail button[type="submit"] {
+    background-color: transparent;
+    border: none;
+}
+
+.containerEditEmail input[type="email"] {
+    border: 2px solid transparent;
+    font-size: 1rem;
+    padding: 0.5rem 0rem;
+    padding-left : .2rem;
+  
+}
+
+.googleEditIcon {
+    color: #8D8D8D;
+    user-select: none;
+    cursor: pointer;
+}
+
+.accountInformationMsg{
+    color: #A0A0A0;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-family: 'Poppins-regular';
+}
+
+.bioTitle {
+    color: #C2C2C2;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-family: 'Poppins-regular'; 
+}
+
+.bioText {
+    color: #8D8D8D;
+    background-color: transparent;
+    border-radius: 5px;
+    font-weight: 700;
+    margin-left: 0.1rem;
+    align-items: center;
+}
+
+.containerBio input[type="text"]:focus{
+    outline: none !important;
+    border:2px dotted #D36638;
+    padding-left: 0.2rem;
+}
+
+.containerBio input[type="text"] {
+    border: none;
+    border: 2px dotted transparent;
+    font-size: 1rem;
+    padding: 0.5rem 0rem;
+    padding-left : .2rem;
+    min-width: 50vw;
+ 
+}
+
+.containerEditNames input[type="text"] {
+    border: 2px solid transparent;
+    font-size: 12px;
+    padding: 0.5rem 0rem;
+    padding-left : .2rem;
+}
+
+.containerEditNames input[type="text"]:focus {
+    outline: none !important;
+    border:2px solid #D36638;
+    padding-left: 0.2rem;
+}
+
+.containerEditNames h3{
+    color: white;
+    font-size: 16px;
+    margin: 0;
+}
+
+
+.nameUser {
+    color: #8D8D8D;
+    background-color: transparent;
+    border-radius: 5px;
+    font-weight: 700;
+    margin-left: 0.1rem;
+    align-items: center;
+ }
+/*--------------------- Buttons ---------------------*/
+
+.btnChangePassword {
+    background-color: #D97136;
+    width: max-content;
+    cursor: pointer;
+    border-radius: 5px;
+    color: whitesmoke;
+    border: 3px solid #D97136;
+    padding: 0.5rem 1rem;
+    font-family: 'Poppins-regular';
+    font-weight: 900;
+    min-width: 11rem;
+}
+
+
+.btnDeleteAccount {
+    background-color: transparent;
+    width: max-content;
+    cursor: pointer;
+    border-radius: 5px;
+    min-width: 11rem;
+    color: whitesmoke;
+    border: 3px solid #D97136;
+    padding: 0.5rem 1rem;
+    font-family: 'Poppins-regular';
+    font-weight: 900;
+    margin-top: 2vh;
+    margin-bottom: 3vh;
+}
+
+.transition-button {
+    transition: background-color 0.8s ease;
+}
+
+.btnDisconnect {
+    color: #D97136;
+    font-family: 'Poppins';
+    width: max-content;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 1rem ;
+    margin-bottom: 1rem ;
+}
+
+/*--------------------- Others ---------------------*/
+
+.underlineAccountPage {
+    height: 0.1rem;
+    background-color: #A0A0A0;
+    border-radius: 999px;
+}
+
+.imgAccount {
+    width: 6rem;
+    height: 6rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 999px;
+    margin: 1rem;
+    border:3px solid #D97136;
+    cursor: pointer;
+}
+
+.containerDisconnect:hover span {
+    cursor: pointer;
+    animation: disconnectAnim 2s infinite ease;
+}
+
+/*--------------------- Popup del ---------------------*/
+
+#popupDel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 9999;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.deletePopup {
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: #28292F;
+}
+
+.delPopBtnCont {
+    justify-content: flex-end;
+    margin-top: 1vh;
+    gap: 1vw;
+}
+
+.delPopBtnCancel{
+    background-color: transparent;
+}
+
+.delPopBtnDelete{
+    background-color: #D97136;
+}
+
+.delPopBtn{
+    padding: 0.5rem 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 900;
+    border-radius: 5px;
+    font-family: 'Poppins-regular';
+    border: 2px solid #D97136;
+    color: #DADADA;
+}
+
+.delPopBtnCancel:hover {
+    cursor: pointer;
+    transition: .5s;
+    background-color: #D97136;
+}
+
+.delPopBtnDelete:hover {
+    cursor: pointer;
+    transition: .5s;
+    background-color: transparent;
+}
+
+
+.titleDelPop {
+    font-family: 'Poppins-regular';
+    font-size: 1.2rem;
+    color: whitesmoke;
+}
+
+.textPopDel{
+    color: #A0A0A0;
+    font-family: 'Poppins-regular';
+}
+
+/*--------------------- Popup Password ---------------------*/
+
+#popupPwd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.backgroundPwd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15rem;
+    overflow: hidden;
+    opacity: 0.5;
+    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+    border-radius: 10px 10px 0px 0px;
+}
+
+.hidContainer {
+    position: relative;   
+    width:max-content; 
+    height:max-content;
+    overflow:hidden;
+}
+
+.containerContentEdit {
+    justify-content: center;
+    width: 100%;
+    margin: 1rem;
+    gap: 2vh;
+}
+
+.circle1 {
+    position: absolute;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 999px;
+    border: 1.5px solid rgba(211, 102, 56, 0.5);
+    background: linear-gradient(180deg, rgba(211, 102, 56, 0.5) 0%, rgba(211, 102, 56, 0) 100%);
+}
+
+.circle2 {
+    position:absolute;
+    width: 20rem;
+    height: 20rem;
+    border: 1.5px solid rgba(211, 102, 56, 0.2);
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(211, 102, 56, 0.2) 0%, rgba(211, 102, 56, 0) 100%);
+}
+
+.circle3{
+    position: absolute;
+    width: 30rem;
+    height: 30rem;
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(211, 102, 56, 0.1) 0%, rgba(211, 102, 56, 0) 100%);
+}
+
+.editPwdPopup {
+    border-radius: 10px;
+    background-color: #212225;
+}
+
+.nameEditPop {
+    color: #BFBFBF;
+    font-family: 'Poppins-regular';
+    font-size: 1rem;
+}
+
+.inputPwd {
+    height: 3rem;
+    padding-left: 1rem;
+    border-radius: 5px;
+    border: none;
+    color: #A0A0A0;
+    background: rgba(217, 217, 217, 0.05);
+}
+
+.containerContentEdit input[type="password"]:focus {
+    outline: none;
+}
+
+.confirmBtn {
+    margin-top: 2vh;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    border: 2px solid #774128;
+    color: #C1BEBE ;
+    font-family: 'Poppins';
+    background: linear-gradient(94.97deg, rgba(211, 102, 56, 0.473) 0%, rgba(211, 102, 56, 0.178) 100%, rgba(211, 102, 56, 0.38) 100%);
+}
+
+.confirmBtn:hover {
+    transition: .6s;
+    cursor: pointer;
+    background-color: #774128;
+}
+
+a .googleSpanClosePwd{
+    position: absolute;
+    margin-top: 20px;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    color: #C1BEBE ;
+}
+
+.containerClose {
+    position: relative;
+}
+
+a .googleSpanClosePwd:hover {
+    cursor: pointer;
+}
+
+.titlePwdPop {
+    position: absolute;
+    text-align: center;
+    margin-top: -400px;
+    font-family: 'Poppins';
+    color: #CBCBCB;
+}
+
+/*--------------------- Popup Disconnect ---------------------*/
+
+#popupDisconnect {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 9999;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*--------------------- Popup Error ---------------------*/
+
+#popupError {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 9999;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.containerPopupError {
+    background-color: #28292F;
+    border-radius: 10px;
+    width: 30rem;
+    border: 2px solid #44454F;
+}
+
+.coloredText {
+    color: #D36638;
+    font-family: 'Poppins';
+}
+
+.containerTopError {
+    color: white;
+    font-family: 'Poppins';
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+
+.containerTopError img {
+    width: 10rem;
+    object-fit: contain;
+}
+
+.errorMsgEdit {
+    text-transform: uppercase;
+    color: whitesmoke;
+    font-family: 'Poppins';
+    width: 100%;
+    background-color: #44454F;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    margin: 0;
+    text-align: center;
+    padding: 0.5rem 0;
+}
+
+.closeSpan {
+    color: #8D8D8D;
+    cursor: pointer;
+    width: 100%;
+    margin: 0.5rem;
+}
+
+/*--------------------- Upload popup ---------------------*/
+
+
+#popupUpload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 9999;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+input[type="file"] { 
+    opacity: 0; 
+    z-index: -1; 
+    position: absolute; 
+}
+
+input[type="file"]:focus + label {
+    outline: 2px solid;  
+}
+ 
+.uploadBtn {
+    margin-right: .5rem;
+}
+
+.inputFocus:focus {
+    display: none;
+}
+
+.cancelUpload {
+    align-self: flex-start;
+}
+
+.alignUploadTexts {
+    text-align: center;
+}
+
+.uploadPopBtnCont {
+    justify-content: center;
+    margin-top: 1vh;
+    gap: 4vw;
+}

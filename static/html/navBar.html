@@ -1,0 +1,87 @@
+{{ define "navBar"}}
+<link rel="stylesheet" href="../css/navBar.css">
+<link rel="stylesheet" href="../css/easyCss.css"> 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/9037/9037226.png" type="image/x-icon">
+<nav>
+    <div class="containerHeaderNav">
+        <label class="labelNav" for="toggle">
+            <span class="burger" id="burger1"></span>
+            <span class="burger" id="burger2"></span>
+            <span class="burger" id="burger3"></span>
+        </label>
+        <a href="/"><h1 class="websiteName"><span class="colorWebsiteName">Bword</span> Studio</h1></a>
+    </div>
+    <input type="checkbox" id="toggle">
+    <div class="linkPages columnContainer">
+        <span class="underlineNav"></span>
+        <h3 class="titleCatNav">GLOBAL</h3>
+        <div class="columnContainer containerCatNav">
+                <div class="rowContainer">
+                    <form action="/explore" method="post">
+                        <input type="text" value="default" name="sort" hidden>
+                        <input type="submit" value="Explore Topics" id="explore" class="bntCatFollows" hidden>
+                        <label for="explore" class="bntCatFollowsContainer flexSpan"><span class="googleSpan material-symbols-outlined">explore</span><span class="bntCatFollows">Explore Topics</span></label>
+                    </form>
+                </div>
+        </div>
+        <span class="underlineNav"></span>
+        <h3 class="titleCatNav">MY FOLLOWS</h3>
+        <div class="marginCat rowContainer">
+            <form action="/explore" method="post">
+                <input type="text" value="Follows" name="sort" hidden>
+                <input type="submit" value="Topics followed" class="bntCatFollows" id="follows" hidden>
+                <label for="follows" class="bntCatFollowsContainer flexSpan"><span class="googleSpan material-symbols-outlined">favorite</span><span class="bntCatFollows">Topics followed</span></label>
+            </form>
+        </div>
+        <span class="underlineNav"></span>
+        <h3 class="titleCatNav">CREATE</h3>
+            <div class="marginCat rowContainer">
+                <form action="/explore#create" method="post">
+                    <input type="text" value="default" name="sort" hidden>
+                    <input type="submit" value="Create topic" class="bntCatFollows" id="topic" hidden>
+                    <label for="topic" class="bntCatFollowsContainer btnCatContainerAdd flexSpan"><img class="upvoteIcon" src="../img/add_icon.png" alt=""><span class="bntCatFollows">Create topic</span></label>
+                </form>
+            </div>
+        {{ if .IsAdmin}}
+        <span class="underlineNav"></span>
+        <h3 class="titleCatNav">ADMIN</h3>
+        <div class="columnContainer containerCatNav">
+            <a href="/moderation">
+                <div class="btnCatContainer btnCatContainerReport rowContainer">
+                    <span class="googleSpanReport material-symbols-outlined">report</span>
+                    <h1 class="nameCatNav">Reports</h1>
+                </div>
+            </a>
+        </div>
+        {{end}}
+        <span class="underlineNav"></span>
+        <h3 class="titleCatNav">MY PROFILE</h3>
+        {{ if .IsConnected}}
+        <a href="/account">
+            <div class="btnCatContainer marginProfile rowContainer">
+                <span class="googleSpan material-symbols-outlined">manage_accounts</span>
+                <h1 class="nameCatNav">My Account</h1>
+            </div>
+        </a>
+        <a href="/profile">
+            <div class="btnCatContainer marginCat rowContainer">
+                <span class="googleSpan material-symbols-outlined">account_circle</span>
+                <h1 class="nameCatNav">My Profile</h1>
+            </div>
+        </a>
+        {{ else }}
+        <a href="/login">
+            <div class="btnSignContainer marginProfile rowContainer">
+                <h1 class="nameCatNav">Login</h1>
+            </div>
+        </a>
+        <a href="/register">
+            <div class="btnSignContainer marginCat rowContainer">
+                <h1 class="nameCatNav">Register</h1>
+            </div>
+        </a>
+        {{end}}
+    </div>
+</nav>
+{{end}}

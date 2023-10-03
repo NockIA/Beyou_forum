@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/explore.css">
+    <link rel="stylesheet" href="../css/easyCss.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Explore</title>
+</head>
+<body>
+    {{ template "navBar" .}}
+    <div class="containerExplorePage">
+        <div class="containerExplore columnContainer">
+            <h1 class="titleCatExplore exploreTitle">EXPLORE TOPICS</h1>
+            <form method="post" class="containerSearchSort rowContainer">
+                <input class="searchBar" placeholder="Search topics" type="text" name="topicSearch">
+                <select class="sort" name="sort" onchange="this.form.submit()">
+                    <option value="default">Sort by</option>
+                    <option value="a-z">a-z</option>
+                    <option value="z-a">z-a</option>
+                    <option value="DESC-Upvote">DESC-Upvote</option>
+                    <option value="ASC-Upvote">ASC-Upvote</option>
+                    <option value="creator">creator</option>
+                    <option value="Follows">Follows</option>
+                </select>
+            </form>
+            {{if not .Topics}}
+                <p class="textNoTopics">there isn't any topic ¯\_(ツ)_/¯</p>
+            {{else}}
+            <div class="columnContainer containerTopicsExplore">
+                {{$root := .}}
+                {{range $i, $topic := .Topics}}
+                    <div class="columnContainer containerTopic">
+                        <div class="containerHeaderTopic rowContainer">
+                            <img class="imgTopic" src="{{$topic.Picture}}">
+                            <h2 class="nameTopic">/{{$topic.Title}}</h2>
+                        </div>
+                        <div class="rowContainer containerTags">
+                            {{range $tag := (index $root.Tags $i)}}
+                                <p class="tag">#{{$tag}}</p>
+                            {{end}}
+                        </div>
+                        <p class="datetopic">Created - {{$topic.CreationDate.Format "Jan 02, 2006"}} by {{index $root.Users $i}}</p>
+                        <div class="rowContainer containerFooterTopic">
+                            <div class="rowContainer flexSpan">
+                                <p class="nbUpvotes">{{index $root.Upvotes $i}} upvotes</p>
+                                <p class="nbUpvotes">{{ $topic.Follows }} follows</p>
+                            </div>
+                            <a class="bntCheckTopicExplore rowContainer" href="http://localhost:8080/topic/{{$topic.Title}}">CHECK TOPIC<span class="material-symbols-outlined">arrow_forward</span></a>
+                        </div>
+                    </div>
+                {{end}}
+            </div>
+            <div class="containerPagination rowContainer alignCenter">
+                <form id="previous" method="post">
+                    <input type="text" value="previous" name="previous" hidden>
+                    <input class="inputPagination" type="submit" value="previous page">
+                    <span class="arrowPagination">❮</span>
+                </form>
+  
+                <form id="next" method="post">
+                    <input type="text" value="next" name="next" hidden>
+                    <input class="inputPagination" type="submit" value="next page">
+                    <span class="arrowPagination">❯</span>
+                </form>
+            </div>
+            {{end}}
+        </div>
+        <div class="containerCreateTopic">
+            <h1 class="titleCatExplore">CREATE A TOPIC</h1>
+            <div id='create' class="containerCreateComp columnContainer">
+                <h2>Wanna talk about a new topic ?</h2>
+                <form method="post" class="containerFormCreate columnContainer" enctype="multipart/form-data">
+                    <label>
+                        About what? <input placeholder="Write here without spaces" class="aboutWhatInput" type="text" name="topicTitle" required>
+                    </label>
+                    <div class="columnContainer">
+                        <h3 class="indicationsCreateTopic">Description</h3>
+                        <input class="inputDescription" type="text" name="description" placeholder="Add a description ..." required>
+                    </div>
+                    <div class="columnContainer">
+                        <h3 class="indicationsCreateTopic">Tags need to be separates by spaces</h3>
+                        <input class="inputTags" type="text" name="tags" placeholder="Add tags ..."/>
+                    </div>
+                    <div class="rowContainer containerBtnImgExplore">
+                        <input id="uploadTopicPicture" type="file" name="photo" hidden>
+                        <label class="uploadBtnExplore" for="uploadTopicPicture">Inport image</label>
+                        <input class="submitUploadBtnExplore" type="submit" value="Upload">
+                    </div>
+                     <h3 class="indicationsCreateTopic indicationsCreateTopicSubmit">Press enter to create</h3>
+                    <input type="submit" hidden>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

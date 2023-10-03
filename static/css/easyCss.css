@@ -1,0 +1,40 @@
+
+/*--------------------- Fonts ---------------------*/
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Semi/Poppins-SemiBold.woff2') format('woff2'),
+     url('../fonts/Poppins-Semi/Poppins-SemiBold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Poppins-regular';
+    src: url('../fonts/Poppins-Reg/Poppins-Regular.woff2') format('woff2'),
+     url('../fonts/Poppins-Reg/Poppins-Regular.woff') format('woff');
+}
+
+/*--------------------- Body ---------------------*/
+
+body {
+    margin: 0;
+    background-color: #32333B;
+}
+
+/*--------------------- Containers ---------------------*/
+
+.columnContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.rowContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+/*--------------------- Align ---------------------*/
+
+.alignCenter {
+    justify-content: center;
+    align-items: center;
+}
+

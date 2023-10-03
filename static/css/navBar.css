@@ -1,0 +1,313 @@
+/*--------------------- Containers ---------------------*/
+
+nav{    
+    width: max-content;
+    padding: 0 2vw;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: 999;
+    background-color: #28292F;
+}
+
+.flexSpan {
+    display: flex;
+    gap: 1vw;
+    flex-direction: row;
+}
+
+.bntCatFollowsContainer {
+    padding: 0.8rem 1rem ;
+    align-items: center;
+    width: 14rem;
+    gap: 1vw;
+    border-radius: 10px;
+    background-color: #32333B;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.bntCatFollowsContainer:hover {
+    transition: 0.5s;
+    background-color: #44454F;
+}
+
+.btnCatContainer {
+    align-items: center;
+    width: 14rem;
+    padding: 0rem 1rem;
+    gap: 1vw;
+    border-radius: 10px;
+    background-color: #32333B;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btnSignContainer {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    width: 14rem;
+    padding: 0rem 1rem;
+    gap: 1vw;
+    border-radius: 999px;
+    background-color: #D36638;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 2px solid #D36638;
+}
+
+.btnSignContainer:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    background-color: transparent;
+}
+
+.btnCatContainerAdd {
+    border: 2px solid #D36638;
+}
+
+.btnCatContainer:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    background-color: #44454F;
+}
+
+.containerCatNav {
+    margin-bottom: 3vh;
+    gap: 5vh;
+}
+
+.linkPages {
+    align-items: center;
+}
+
+.btnCatContainerReport {
+    border-top: 2px solid #D36638;
+}
+/*--------------------- Texts ---------------------*/
+
+.labelNav, #toggle{
+    display: none;
+    color: white;
+}
+
+.underlineNav {
+    height: 0.2rem;
+    border-radius: 999px;
+    background-color: #A0A0A0;
+}
+
+.titleCatNav {
+    margin: 1rem;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    font-family: 'Poppins-regular';
+    color: whitesmoke;
+}
+
+.nameCatNav {
+    width: max-content;
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+    font-family: 'Poppins-regular',sans-serif;
+    color: whitesmoke;
+}
+
+.bntCatFollows {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-family: 'Poppins';
+    color: white;
+    width: max-content;
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.websiteName {
+    font-family: 'Poppins',sans-serif;
+    color: #FFFFFF;
+}
+
+.websiteName:hover {
+    cursor: pointer;
+}
+
+.googleSpan {
+    color: white;
+}
+
+.iconAccountStyle {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.btnCatContainer span {
+    justify-self: flex-start;
+}
+
+.marginCat {
+    margin-bottom: 4vh;
+}
+
+.marginProfile {
+    margin-bottom: 2vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+.colorWebsiteName {
+    color: #D36638; 
+}
+
+.upvoteIcon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.googleSpanReport {
+    color: #D36638;
+}
+
+/*--------------------- Responsive ---------------------*/
+
+@media screen and (min-width : 900px) {
+    nav {
+        position: fixed;
+        min-height: 100vh;
+        margin-right: 8rem;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .titleCatNav {
+        width: 100%;
+    }
+    .websiteName {
+        margin: 1vh 0;
+    }
+    .underlineNav {
+        width: 100%;
+    }
+    .containerHeaderNav {
+        gap: 3vw;
+    }
+}
+
+@media all and (max-width: 900px){
+    .containerHeaderNav {
+        display: flex ;
+        flex-direction: row;
+        width: 100vw;
+        border-bottom: 3.5px solid #44454F;
+    }
+    .containerLoginPage{
+        flex-direction: column;
+    }
+
+    .underlineNav {
+        width: 80vw;
+    }
+
+    nav {
+        position: fixed;
+        height: 5rem;
+        width: 100%;
+        padding: 0;
+    }
+
+    nav .linkPages {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .labelNav {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-left: 1vw;
+        margin-left: 5vw;
+        margin-top: 1.4rem;
+        font-size: 2.4rem;
+        gap: 6px;
+        cursor: pointer;
+    }
+
+    a{
+        text-align: center;
+        font-family: monospace;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    #toggle:checked + .linkPages {
+        display: flex;
+        background-color: #28292F;
+        border-bottom: 2px solid #44454F;
+    }
+    .websiteName {
+        width: 75vw;
+    }
+}
+
+/*--------------------- Burger Menu ---------------------*/
+
+.burger{
+    width: 2.5rem;
+    height: 0.3rem;
+    border-radius: 999px;
+    background-color: #A0A0A0;
+}
+
+.labelNav:hover #burger1 {
+    animation: burgerMenuAnimationTop 1s ease;
+    animation-fill-mode: forwards;
+}
+.labelNav:hover  #burger2 {
+    animation: burgerMenuAnimationMiddle 1s ease;
+    animation-fill-mode: forwards;
+}
+.labelNav:hover  #burger3 {
+    animation: burgerMenuAnimationBottom 1s ease;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes burgerMenuAnimationMiddle {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+        margin-top: 0;
+    }
+    100% {
+        margin-top: -18.144px;
+        transform: translateX(20px);
+        opacity: 0;
+        padding-top: 18.144px;
+    }
+}
+@keyframes burgerMenuAnimationTop {
+    0% {
+         margin-top: 0;
+    }
+    100% {
+        margin-top: 13.1px;
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes burgerMenuAnimationBottom {
+    0% {
+         margin-top: 0;
+    }
+    100% {
+        margin-top: -22.3px;
+        transform: rotate(-45deg);
+        margin-bottom: 15px;
+    }
+}
+
+

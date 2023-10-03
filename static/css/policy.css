@@ -1,0 +1,50 @@
+@media screen and (max-width:900px) {
+    .containerPolicyPage {
+        margin-top: 7rem;
+    }
+}
+
+@media screen and (min-width:900px) {
+    .containerPolicyPage {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: calc(100vw - 350px);
+    }
+}
+
+
+.containerPolicyPage h1 {
+    font-family: 'Poppins';
+    color: whitesmoke;
+    text-align: center;
+    font-size: 40px;
+}
+
+.coloredText {
+    color: #D36638;
+}
+
+.containerParagraph {
+    padding: 0 7vw ;
+}
+
+.containerParagraph h2{
+    color: whitesmoke;
+    font-family: 'Poppins';
+
+}
+
+.containerParagraph p {
+    color: whitesmoke;
+    font-family: 'Poppins-regular';
+}
+
+.listCookies {
+    gap: 1vh;
+}
+
+.listCookies li {
+    color: whitesmoke;
+    font-family: 'Poppins-regular';
+}

@@ -1,0 +1,32 @@
+/*---------------------- Responsive ----------------------*/
+
+@media screen and (min-width:900px) {
+    .containerErrorPath {
+        position: absolute;
+        right: 0;
+        top: 10vh;
+        width: calc(100vw - 350px);
+    }
+}
+
+@media screen and (max-width:900px) {
+    .containerErrorPath {
+      height: calc(100vh - 76px);
+    }
+}
+
+/*---------------------- Texts ----------------------*/
+
+.textError {
+    font-family: 'Poppins';
+    text-transform: uppercase;
+    color: #D36638;
+}
+
+/*---------------------- Others ----------------------*/
+
+.imgError {
+    width: 40%;
+    object-fit: contain;
+}
+

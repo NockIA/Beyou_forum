@@ -1,0 +1,364 @@
+@media screen and (min-width : 1250px) {
+    .containerModerationPage {
+        width: calc(100vw - 350px);
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: flex;
+        flex-direction: row;
+    }
+    .containerBanned {
+        margin-right: 2vw;
+    }
+    .titlePageAutomode {
+        margin: 0;
+        margin-top: 2vh;
+
+    }
+    .wordsinput input[type="text"]{
+        width: 70%;
+    }
+
+    .wordsinput input[type="submit"]{
+        width: 30%;
+    }
+}
+
+@media screen and (min-width:900px) and (max-width : 1250px) {
+    .containerModerationPage {
+        width: calc(100vw - 350px);
+        position: absolute;
+        right: 30px;
+        top: 0;
+    }
+    .wordsinput input[type="text"]{
+       width: 80%;
+    }
+    .containerBanned {
+        margin-right: 2vw;
+    }
+    .titlePageAutomode {
+        margin-top: 1vh;
+        margin: 0;
+    }
+    .wordsinput input[type="submit"]{
+        width: 20%;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .containerModerationPage {
+        margin: 0 1rem;
+    }
+    .wordsinput input[type="text"]{
+        width: 80%;
+     }
+    .titlePageAutomode {
+        text-align: center;
+        margin-top: 7rem;
+    }
+    .containerReportPost {
+        flex-wrap: wrap;
+    }
+    .containerTopicReport {
+        flex-wrap: wrap;
+    }
+    .wordsinput input[type="submit"]{
+        width: 20%;
+    }
+}
+
+.containerModerationPage {
+    justify-content: space-between;
+    gap: 1vw;
+}
+
+.titlePageAutomode {
+    color: whitesmoke;
+    font-family: 'Poppins';
+}
+
+.subtitlePage {
+    color: whitesmoke;
+    font-family: 'Poppins';
+    margin: 0;
+}
+
+.containerReports {
+    gap: 1rem;
+}
+
+.containerReportPost {
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    background-color: #28292F;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+
+}
+
+.containerReportPosts {
+    gap: 1rem;
+    min-height: 40vh;
+}
+
+.imgReportPost {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 999px;
+    border: 2px solid #D36638;
+}
+
+.userReportPost {
+    color: whitesmoke;
+    font-family: 'Poppins';
+    text-align: center;
+    font-size: 18px;
+}
+
+.contentReportPost {
+    color: whitesmoke;
+    font-family: 'Poppins-regular';
+    text-align: start;
+    font-size: 14px;
+}
+
+.containerReportMsg {
+    justify-content: space-between;
+}
+
+.containerReportMsg h3 {
+    color: #D36638 ;
+    font-family: 'Poppins';
+    font-size: 14px;
+}
+
+.containerReportMsg p {
+    color: whitesmoke;
+    font-family: 'Poppins-regular';
+    font-size: 14px;
+}
+
+.containerBtnBanPost {
+    gap: 1rem;
+}
+
+.btnBan {
+    color: white ;
+    background-color: #D36638;
+    border-radius: 8px;
+    padding: 0.2rem;
+    cursor: pointer;
+    border: 3px solid transparent;
+}
+
+.btnBan:hover {
+    background-color: transparent;
+    border: 3px solid #D36638;
+    transition: 0.3s;
+}
+
+.btnBan {
+    color: white ;
+    background-color: #D36638;
+    border-radius: 8px;
+    padding: 0.2rem;
+    cursor: pointer;
+    border: 3px solid transparent;
+}
+
+.btnBan:hover {
+    background-color: transparent;
+    border: 3px solid #D36638;
+    transition: 0.3s;
+}
+
+.btnDelete{
+    color: white ;
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 0.2rem;
+    cursor: pointer;
+    border: 3px solid #D36638;
+}
+
+.btnDelete:hover {
+    background-color: #D36638;
+    transition: 0.3s;
+}
+
+.btnCancel {
+    color: white ;
+    background-color: transparent;
+    padding: 0.2rem;
+    cursor: pointer;
+    border: 3px solid transparent;
+}
+
+
+.btnCancel {
+    color: white ;
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 0.2rem;
+    cursor: pointer;
+    border: 3px solid #D36638;
+}
+
+.btnCancel:hover {
+    color: #D36638 ;
+    transition: 0.3s;
+}
+
+.containerReportsTopics {
+    gap: 1rem;
+    min-height: 40vh;
+}
+
+.containerTopicReport {
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    background-color: #28292F;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.imgReportTopics {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 999px;
+    border: 2px solid #D36638;
+}
+
+.titleTopicReport {
+    color: whitesmoke;
+    font-family: 'Poppins';
+    text-align: center;
+    font-size: 24px;
+}
+
+.descriptionTopic {
+    color: rgb(206, 202, 202);
+    font-family: 'Poppins';
+    font-size: 12px;
+}
+
+.descriptionTopicTitle {
+    color: rgb(233, 230, 230);
+    font-family: 'Poppins';
+    font-size: 14px;
+}
+
+/* left page */
+
+.containerBanned {
+    gap: 2rem;
+    margin-top: 17vh;
+
+}
+
+.containerBannedUsers {
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #28292F;
+    border-radius: 10px;
+    min-height: 35vh;
+}
+
+.containerBannedUsers h2 {
+    color: white;
+    font-family: 'Poppins';
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px ;
+}
+
+.user {
+    background-color: #32333B;
+    border-radius: 10px;
+    gap: 1rem;
+    padding: .5rem 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.containerBannedwords {
+    background-color: #28292F;
+    border-radius: 10px;
+    padding: 1rem;
+    min-height: 35vh;
+}
+
+.containerBannedwords h2 {
+    color: whitesmoke;
+    font-family: 'Poppins';
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.wordsinput input[type="text"]{
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid #D36638;
+    padding: 0.2rem 1rem;
+    color: white;
+
+    font-family: "Poppins-regular";
+}
+
+.wordsinput input[type="text"]:focus{
+    outline: none;
+}
+
+.wordsinput input[type="submit"]{
+    background-color: #D36638;
+    border-radius: 5px;
+    border: 3px solid #D36638;
+    color: black;
+    font-family: "Poppins";
+    cursor: pointer;
+
+}
+
+.wordsinput input[type="submit"]:hover{
+    background-color: transparent;
+    color: whitesmoke;
+    transition: .5s;
+}
+
+.word {
+    width: 100%;
+    text-align: center;
+    color: whitesmoke;
+    font-family: 'Poppins';
+}
+
+.btnDelete{
+    color: white ;
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 0.2rem;
+    cursor: pointer;
+    border: 3px solid #D36638;
+}
+
+.btnDelete:hover {
+    background-color: #D36638;
+    transition: 0.3s;
+}
+
+.containerWord {
+    align-items: center;
+    gap: 1rem;
+    background-color: #32333B;
+    border-radius: 5px;
+    padding: 0.2rem .5rem;
+}
+
+.wordslist {
+    gap: 1rem;
+    margin-top: 1rem;
+}
